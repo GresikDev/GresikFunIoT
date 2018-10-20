@@ -21,6 +21,7 @@
         <activity android:name=".kotlin.Step1Activity" />
         <activity android:name=".kotlin.Step2Activity" />
         <activity android:name=".kotlin.Step3Activity" />
+        <activity android:name=".kotlin.Step4Activity" />
     </application>
 
 </manifest>
