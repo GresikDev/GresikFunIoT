@@ -10,4 +10,6 @@
     <string name="txt_color_blue">Biru</string>
     <string name="txt_color_green">Hijau</string>
     <string name="txt_color_black">Hitam</string>
+    <string name="check_color">Klik untuk Cek Warna</string>
+    <string name="submit">Kirim</string>
 </resources>
