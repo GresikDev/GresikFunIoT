@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, Step3Activity::class.java))
         }
         btnToStep4?.setOnClickListener {
-            startActivity(Intent(this@MainActivity, Step1Activity::class.java))
+            startActivity(Intent(this@MainActivity, Step4Activity::class.java))
         }
         btnToStep5?.setOnClickListener {
             startActivity(Intent(this@MainActivity, Step1Activity::class.java))
