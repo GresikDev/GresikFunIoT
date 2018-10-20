@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">GresikFun IoT</string>
+    <string name="step1">Manual Parameter URL</string>
+    <string name="step2">Form Input by EditText</string>
+    <string name="step3">Form Input by Slider</string>
+    <string name="step4">Random by Button</string>
+    <string name="step5">Random by Accelerometer</string>
+    <string name="step6">Custom IP</string>
+    <string name="txt_color_red">Merah</string>
+    <string name="txt_color_blue">Biru</string>
+    <string name="txt_color_green">Hijau</string>
+    <string name="txt_color_black">Hitam</string>
 </resources>
