@@ -3,6 +3,7 @@
     package="com.gresikdev.gresikfuniot">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +23,7 @@
         <activity android:name=".kotlin.Step2Activity" />
         <activity android:name=".kotlin.Step3Activity" />
         <activity android:name=".kotlin.Step4Activity" />
+        <activity android:name=".kotlin.Step5Activity" />
     </application>
 
 </manifest>
