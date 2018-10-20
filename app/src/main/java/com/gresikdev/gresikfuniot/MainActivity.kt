@@ -3,7 +3,7 @@ package com.gresikdev.gresikfuniot
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.gresikdev.gresikfuniot.kotlin.Step1Activity
+import com.gresikdev.gresikfuniot.kotlin.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, Step1Activity::class.java))
         }
         btnToStep2?.setOnClickListener {
-            startActivity(Intent(this@MainActivity, Step1Activity::class.java))
+            startActivity(Intent(this@MainActivity, Step2Activity::class.java))
         }
         btnToStep3?.setOnClickListener {
             startActivity(Intent(this@MainActivity, Step1Activity::class.java))

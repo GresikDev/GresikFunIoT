@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".kotlin.Step1Activity" />
+        <activity android:name=".kotlin.Step2Activity" />
     </application>
 
 </manifest>
