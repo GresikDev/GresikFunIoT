@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".java.Step1Activity" />
         <activity android:name=".java.Step2Activity" />
+        <activity android:name=".java.Step3Activity" />
     </application>
 
 </manifest>
