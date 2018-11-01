@@ -2,6 +2,7 @@ package com.gresikdev.gresikfuniot.kotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import com.gresikdev.gresikfuniot.R
 import kotlinx.android.synthetic.main.activity_step1.*
 import org.jetbrains.anko.doAsync
@@ -12,6 +13,8 @@ class Step1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_step1)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         btnSubmitBlack?.setOnClickListener {
             doAsync {
@@ -39,6 +42,16 @@ class Step1Activity : AppCompatActivity() {
                 val urlArduino = "http://10.37.11.235/genericArgs?R=0&G=0&B=255"
                 URL(urlArduino).readText()
             }
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when(item?.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

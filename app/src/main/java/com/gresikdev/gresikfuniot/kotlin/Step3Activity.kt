@@ -3,6 +3,7 @@ package com.gresikdev.gresikfuniot.kotlin
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import android.widget.SeekBar
 import com.gresikdev.gresikfuniot.R
 import kotlinx.android.synthetic.main.activity_step3.*
@@ -15,6 +16,8 @@ class Step3Activity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_step3)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         etValRed?.setText(seekBarRed?.progress.toString())
         etValGreen?.setText(seekBarGreen?.progress.toString())
         etValBlue?.setText(seekBarBlue?.progress.toString())
@@ -23,6 +26,18 @@ class Step3Activity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         seekBarRed?.setOnSeekBarChangeListener(this)
         seekBarGreen?.setOnSeekBarChangeListener(this)
         seekBarBlue?.setOnSeekBarChangeListener(this)
+
+        btnCheckColor?.setOnClickListener {
+            val red = etValRed?.text?.toString()?.toIntOrNull() ?: 0
+            val green = etValGreen?.text?.toString()?.toIntOrNull() ?: 0
+            val blue = etValBlue?.text?.toString()?.toIntOrNull() ?: 0
+
+            seekBarRed?.progress = red
+            seekBarGreen?.progress = green
+            seekBarBlue?.progress = blue
+
+            checkColor()
+        }
 
         btnSubmitColor?.setOnClickListener {
             val red = seekBarRed?.progress ?: 0
@@ -62,5 +77,16 @@ class Step3Activity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when(item?.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

@@ -3,6 +3,7 @@ package com.gresikdev.gresikfuniot.kotlin
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import com.gresikdev.gresikfuniot.R
 import kotlinx.android.synthetic.main.activity_step4.*
 import org.jetbrains.anko.doAsync
@@ -17,6 +18,8 @@ class Step4Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_step4)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         btnCheckColor?.setOnClickListener {
             red = Random().nextInt(256)
@@ -37,6 +40,17 @@ class Step4Activity : AppCompatActivity() {
                         ?: 0}&B=${blue ?: 0}"
                 URL(urlArduino).readText()
             }
+        }
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when(item?.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
