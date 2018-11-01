@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.hardware.SensorManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import com.gresikdev.gresikfuniot.R
 import com.squareup.seismic.ShakeDetector
 import kotlinx.android.synthetic.main.activity_optional.*
@@ -20,6 +21,8 @@ class OptionalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_optional)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         shakeDetector = ShakeDetector {
@@ -63,5 +66,16 @@ class OptionalActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         shakeDetector.stop()
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when(item?.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
